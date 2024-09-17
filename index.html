@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nonogram Solver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nonogram Solver</h1>
+        <div class="grid-size-input">
+            <label for="rows">Rows:</label>
+            <input type="number" id="rows" min="1" max="50" value="5">
+            <label for="cols">Columns:</label>
+            <input type="number" id="cols" min="1" max="50" value="5">
+            <button id="generate-grid">Generate Grid</button>
+        </div>
+        <div id="clues-inputs" style="display: none;">
+            <h2>Enter Clues</h2>
+            <div class="nonogram-grid">
+                <div class="clues-row">
+                    <div class="empty-cell"></div>
+                    <div id="col-clues"></div>
+                </div>
+                <div class="clues-grid">
+                    <div id="row-clues"></div>
+                    <div id="empty-grid"></div>
+                </div>
+            </div>
+            <button id="solve-button">Solve Nonogram</button>
+            <div class="import-export">
+                <button id="export-button">Export Clues</button>
+                <button id="import-button">Import Clues</button>
+                <input type="text" id="import-input" placeholder="Paste exported clues here">
+                <br>
+                <input type="file" id="non-file-input" accept=".non">
+                <button id="load-non-file">Load .non File</button>
+            </div>
+        </div>
+        <div id="progress-container" style="display: none;">
+            <h2>Solving Progress</h2>
+            <progress id="progress-bar" value="0" max="100"></progress>
+        </div>
+        <div id="solution-container" style="display: none;">
+            <h2>Solution</h2>
+            <div id="solution-grid"></div>
+            <div id="solution-navigation" style="display: none;">
+                <button id="prev-solution">Previous Solution</button>
+                <span id="solution-count"></span>
+                <button id="next-solution">Next Solution</button>
+            </div>
+        </div>
+    </div>
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
